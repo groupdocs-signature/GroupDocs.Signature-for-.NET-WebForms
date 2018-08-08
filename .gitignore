@@ -1,0 +1,8 @@
+/packages
+/.vs
+/src/bin
+/src/obj
+/App_Data/temp
+/App_Data/Output
+/App_Data/SignatureData
+/src/GroupDocs.Signature.WebForms.csproj.user
