@@ -236,7 +236,7 @@
     <Compile Include="Products\Signature\Entity\Directory\QrCodeDataDirectoryEntity.cs" />
     <Compile Include="Products\Signature\Entity\Directory\StampDataDirectoryEntity.cs" />
     <Compile Include="Products\Signature\Entity\Directory\TextDataDirectoryEntity.cs" />
-    <Compile Include="Products\Signature\Entity\Web\DocumentDescriptionEntity.cs" />
+    <Compile Include="Products\Common\Entity\Web\DocumentDescriptionEntity.cs" />
     <Compile Include="Products\Signature\Entity\Web\SignatureDataEntity.cs" />
     <Compile Include="Products\Signature\Entity\Web\SignatureFileDescriptionEntity.cs" />
     <Compile Include="Products\Signature\Entity\Web\SignaturePostedDataEntity.cs" />

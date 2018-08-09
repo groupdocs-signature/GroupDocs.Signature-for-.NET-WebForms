@@ -19,12 +19,6 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Util.Directory
         public FilesDirectoryUtils(SignatureConfiguration signatureConfiguration)
         {
             this.signatureConfiguration = signatureConfiguration;
-
-            // set files directory
-            if (!File.Exists(signatureConfiguration.FilesDirectory))
-            {
-                signatureConfiguration.FilesDirectory = Path.GetFullPath(AppDomain.CurrentDomain.BaseDirectory + "/../" + signatureConfiguration.FilesDirectory);
-            }
         }
 
         /// <summary>
