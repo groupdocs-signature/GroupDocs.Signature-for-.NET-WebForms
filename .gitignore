@@ -6,3 +6,8 @@
 /App_Data/Output
 /App_Data/SignatureData
 /src/GroupDocs.Signature.WebForms.csproj.user
+src/Resources/*
+!src/Resources/.gitkeep
+node_modules
+src/package-lock.json
+/src/node 
