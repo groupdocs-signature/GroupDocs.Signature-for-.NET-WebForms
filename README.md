@@ -1,5 +1,5 @@
 # GroupDocs.Signature for .NET Web Forms Example
-###### version 1.8.0
+###### version 1.9.0
 
 
 ## System Requirements
