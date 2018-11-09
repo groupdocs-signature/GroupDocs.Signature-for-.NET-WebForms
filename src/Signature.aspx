@@ -7,7 +7,8 @@
 <html>
 <head>
     <title>Signature for .NET Web Forms</title>
-    <link type="text/css" rel="stylesheet" href="resources/common/css/font-awesome.min.css" />
+    <link type="text/css" rel="stylesheet" href="resources/common/css/all.min.css">
+    <link type="text/css" rel="stylesheet" href="resources/common/css/v4-shims.min.css">
     <link type="text/css" rel="stylesheet" href="resources/common/css/swiper.min.css">
     <link type="text/css" rel="stylesheet" href="resources/common/css/jquery-ui.min.css" />
     <link type="text/css" rel="stylesheet" href="resources/common/css/circle-progress.css" />
@@ -44,7 +45,7 @@
             defaultDocument: '<%= config.Signature.DefaultDocument%>',
             htmlMode: false,
             preloadPageCount: <%= config.Signature.PreloadPageCount%>,
-            zoom : false,
+            zoom: false,
             pageSelector: <%= config.Common.isPageSelector.ToString().ToLowerInvariant()%>,
             search: false,
             thumbnails: false,
