@@ -19,7 +19,7 @@ namespace GroupDocs.Signature.WebForms.Products.Common.Config
         {
             Server = new ServerConfiguration();
             Application = new ApplicationConfiguration();
-            Signature = new SignatureConfiguration();
+            Signature = new SignatureConfiguration();            
             Common = new CommonConfiguration();
         }
     }

@@ -1,8 +1,6 @@
-﻿using GroupDocs.Signature.WebForms.Products.Signature.Config;
+﻿using GroupDocs.Signature.WebForms.Products.Common.Util.Directory;
+using GroupDocs.Signature.WebForms.Products.Signature.Config;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace GroupDocs.Signature.WebForms.Products.Signature.Util.Directory
 {
