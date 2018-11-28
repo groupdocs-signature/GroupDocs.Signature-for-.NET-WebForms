@@ -298,7 +298,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50879</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:8080</IISUrl>
+          <IISUrl>http://localhost:8080/signature</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
