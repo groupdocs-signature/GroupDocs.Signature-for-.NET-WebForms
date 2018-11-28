@@ -1,5 +1,5 @@
 # GroupDocs.Signature for .NET Web Forms Example
-###### version 1.10.0
+###### version 1.12.0
 
 
 ## System Requirements
@@ -52,11 +52,10 @@ https://www.youtube.com/watch?v=pA98PkdXcN8
 2. Extract/Copy GroupDocs.Signature for .NET Web Forms Example to working directory.
 3. Navigate to GroupDocs.Signature for .NET Web Forms Example root directory.
 4. Open solution in the Visual Studio.
-4. Update params in `Web.Config` to meet your requirements.
+5. Update common parameters in `web.config` and example related properties in the 'configuration.yml' to meet your requirements.
 5. Run the application.
 6. Go to `http://localhost:{PORT}/signature/`.
 PORT - port number specified in `Web.Config` (by default http://localhost:8080/signature/).
-
 
 ## Resources
 - **Website:** [www.groupdocs.com](http://www.groupdocs.com)
