@@ -1,6 +1,8 @@
 # GroupDocs.Signature for .NET Web Forms Example
 ###### version 1.12.0
 
+[![Build status](https://ci.appveyor.com/api/projects/status/jpt31dp2p6u3h8el/branch/master?svg=true)](https://ci.appveyor.com/project/egorovpavel/groupdocs-signature-for-net-webforms/branch/master)
+
 
 ## System Requirements
 - .NET Framework 4.5
