@@ -1,5 +1,7 @@
 ﻿using GroupDocs.Signature.WebForms.Products.Common.Util.Parser;
 using System;
+using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Configuration;
 using System.Diagnostics;
 using System.IO;
@@ -40,7 +42,7 @@ namespace GroupDocs.Signature.WebForms.Products.Common.Config
                 }
                 LicensePath = license;
                 if (!File.Exists(LicensePath))
-                {
+                {                    
                     Debug.WriteLine("License file path is incorrect, launched in trial mode");
                     LicensePath = "";
                 }

@@ -2,7 +2,7 @@
 using Huygens;
 using System;
 
-namespace GroupDocs.Signature.MVC.Test
+namespace GroupDocs.Signature.WebForms.Test
 {
     [TestFixture]
     public class SignatureControllerTest
