@@ -33,8 +33,8 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class SignatureApiController : ApiController
     {
-        private static Common.Config.GlobalConfiguration GlobalConfiguration;
-        private List<string> SupportedImageFormats = new List<string>() { ".bmp", ".jpeg", ".jpg", ".tiff", ".tif", ".png" };
+        private static Common.Config.GlobalConfiguration GlobalConfiguration = new Common.Config.GlobalConfiguration();
+        private readonly List<string> SupportedImageFormats = new List<string>() { ".bmp", ".jpeg", ".jpg", ".tiff", ".tif", ".png" };
         private static SignatureHandler SignatureHandler;
         private DirectoryUtils DirectoryUtils;
 
@@ -42,9 +42,7 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Controllers
         /// Constructor
         /// </summary>
         public SignatureApiController()
-        {
-            // get global configurations 
-            GlobalConfiguration = new Common.Config.GlobalConfiguration();
+        {            
             // initiate DirectoryUtils
             DirectoryUtils = new DirectoryUtils(GlobalConfiguration.Signature);
             // create signature application configuration
@@ -243,7 +241,7 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Controllers
                         pathToDownload = Path.Combine(DirectoryUtils.FilesDirectory.GetPath(), fileName);
                     }
                     // add file into the response
-                    var fileStream = new FileStream(path, FileMode.Open);
+                    var fileStream = new FileStream(pathToDownload, FileMode.Open);
                     response.Content = new StreamContent(fileStream);
                     response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
                     response.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment");
