@@ -34,9 +34,9 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Controllers
     public class SignatureApiController : ApiController
     {
         private static Common.Config.GlobalConfiguration GlobalConfiguration = new Common.Config.GlobalConfiguration();
-        private readonly List<string> SupportedImageFormats = new List<string>() { ".bmp", ".jpeg", ".jpg", ".tiff", ".tif", ".png" };
-        private static SignatureHandler SignatureHandler;
-        private DirectoryUtils DirectoryUtils;
+        private readonly List<string> SupportedImageFormats = new List<string>{ ".bmp", ".jpeg", ".jpg", ".tiff", ".tif", ".png" };
+        private SignatureHandler SignatureHandler;
+        private readonly DirectoryUtils DirectoryUtils;
 
         /// <summary>
         /// Constructor
