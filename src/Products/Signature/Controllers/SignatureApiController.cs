@@ -33,7 +33,7 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class SignatureApiController : ApiController
     {
-        private static Common.Config.GlobalConfiguration GlobalConfiguration;
+        private static Common.Config.GlobalConfiguration GlobalConfiguration = new Common.Config.GlobalConfiguration();
         private readonly List<string> SupportedImageFormats = new List<string> { ".bmp", ".jpeg", ".jpg", ".tiff", ".tif", ".png" };
         private static SignatureHandler SignatureHandler;
         private readonly DirectoryUtils DirectoryUtils;
@@ -42,9 +42,7 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Controllers
         /// Constructor
         /// </summary>
         public SignatureApiController()
-        {
-            // get global configurations 
-            GlobalConfiguration = new Common.Config.GlobalConfiguration();
+        {            
             // initiate DirectoryUtils
             DirectoryUtils = new DirectoryUtils(GlobalConfiguration.Signature);
             // create signature application configuration
