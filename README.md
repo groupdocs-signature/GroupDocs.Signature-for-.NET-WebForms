@@ -1,5 +1,5 @@
 # GroupDocs.Signature for .NET Web Forms Example
-###### version 1.13.0
+###### version 1.14.0
 
 [![Build status](https://ci.appveyor.com/api/projects/status/jpt31dp2p6u3h8el/branch/master?svg=true)](https://ci.appveyor.com/project/egorovpavel/groupdocs-signature-for-net-webforms/branch/master)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/bae368faab7a4857bf5f239b30c63f3d)](https://www.codacy.com/app/GroupDocs/GroupDocs.Signature-for-.NET-WebForms?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=groupdocs-signature/GroupDocs.Signature-for-.NET-WebForms&amp;utm_campaign=Badge_Grade)

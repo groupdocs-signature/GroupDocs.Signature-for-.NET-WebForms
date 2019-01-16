@@ -1,5 +1,5 @@
-﻿using GroupDocs.Signature.WebForms.Products.Signature.Entity.Web;
-using GroupDocs.Signature.WebForms.Products.Common.Util.Comparator;
+﻿using GroupDocs.Signature.WebForms.Products.Common.Util.Comparator;
+using GroupDocs.Signature.WebForms.Products.Signature.Entity.Web;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -136,9 +136,7 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Loader
             try
             {
                 if (imageFiles != null && imageFiles.Length > 0)
-                {
-
-                    FileInfo xmls = new FileInfo(xmlPath);
+                {                    
                     string[] xmlFiles = Directory.GetFiles(xmlPath);
                     List<String> filesList = new List<string>();                  
                     foreach (string imageFile in imageFiles)

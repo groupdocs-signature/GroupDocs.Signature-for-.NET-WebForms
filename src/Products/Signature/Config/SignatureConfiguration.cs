@@ -23,7 +23,7 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Config
         public bool isBarCodeSignature = true;
         public bool isStampSignature = true;
         public bool isDownloadOriginal = true;
-        public bool isDownloadSigned = true;
+        public bool isDownloadSigned = true;      
 
         /// <summary>
         /// Get signature configuration section from the Web.config
@@ -53,7 +53,7 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Config
             isBarCodeSignature = valuesGetter.GetBooleanPropertyValue("barCodeSignature", isBarCodeSignature);
             isStampSignature = valuesGetter.GetBooleanPropertyValue("stampSignature", isStampSignature);
             isDownloadOriginal = valuesGetter.GetBooleanPropertyValue("downloadOriginal", isDownloadOriginal);
-            isDownloadSigned = valuesGetter.GetBooleanPropertyValue("downloadSigned", isDownloadSigned);
+            isDownloadSigned = valuesGetter.GetBooleanPropertyValue("downloadSigned", isDownloadSigned);            
             PreloadPageCount = valuesGetter.GetIntegerPropertyValue("preloadPageCount", PreloadPageCount);
         }
 

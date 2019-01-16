@@ -12,13 +12,12 @@ namespace GroupDocs.Signature.WebForms.Products.Common.Config
     {
         public int HttpPort = 8080;
         public string HostAddress = "localhost";
-        private NameValueCollection serverConfiguration = (NameValueCollection)System.Configuration.ConfigurationManager.GetSection("serverConfiguration");
+        private readonly NameValueCollection serverConfiguration = (NameValueCollection)System.Configuration.ConfigurationManager.GetSection("serverConfiguration");
 
         /// <summary>
         /// Get server configuration section of the web.config
         /// </summary>
-        public ServerConfiguration()
-        {
+        public ServerConfiguration() {
             YamlParser parser = new YamlParser();
             dynamic configuration = parser.GetConfiguration("server");
             ConfigurationValuesGetter valuesGetter = new ConfigurationValuesGetter(configuration);
