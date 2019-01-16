@@ -34,9 +34,9 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Controllers
     public class SignatureApiController : ApiController
     {
         private static Common.Config.GlobalConfiguration GlobalConfiguration;
-        private List<string> SupportedImageFormats = new List<string>() { ".bmp", ".jpeg", ".jpg", ".tiff", ".tif", ".png" };
+        private readonly List<string> SupportedImageFormats = new List<string> { ".bmp", ".jpeg", ".jpg", ".tiff", ".tif", ".png" };
         private static SignatureHandler SignatureHandler;
-        private DirectoryUtils DirectoryUtils;
+        private readonly DirectoryUtils DirectoryUtils;
 
         /// <summary>
         /// Constructor
@@ -190,6 +190,7 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Controllers
             }
             catch (System.Exception ex)
             {
+                // set exception message
                 return Request.CreateResponse(HttpStatusCode.OK, new Common.Resources.Resources().GenerateException(ex, password));
             }
         }
