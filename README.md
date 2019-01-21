@@ -1,5 +1,5 @@
 # GroupDocs.Signature for .NET Web Forms Example
-###### version 1.15.0
+###### version 1.16.0
 
 [![Build status](https://ci.appveyor.com/api/projects/status/jpt31dp2p6u3h8el/branch/master?svg=true)](https://ci.appveyor.com/project/egorovpavel/groupdocs-signature-for-net-webforms/branch/master)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/bae368faab7a4857bf5f239b30c63f3d)](https://www.codacy.com/app/GroupDocs/GroupDocs.Signature-for-.NET-WebForms?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=groupdocs-signature/GroupDocs.Signature-for-.NET-WebForms&amp;utm_campaign=Badge_Grade)
@@ -16,7 +16,6 @@ Welcome our new and improved GroupDocs.Signature UI - native, simple, fully conf
 Thanks to powerful and flexible [GroupDocs.Signature for .NET](https://products.groupdocs.com/Signature/NET) API, over 50 document formats are supported.
 
 **Note** Without a license application will run in trial mode, purchase [GroupDocs.Signature for .NET license](https://purchase.groupdocs.com/order-online-step-1-of-8.aspx) or request [GroupDocs.Signature for .NET temporary license](https://purchase.groupdocs.com/temporary-license).
-
 
 ## Demo Video
 https://www.youtube.com/watch?v=pA98PkdXcN8
