@@ -238,7 +238,7 @@
     <Compile Include="Products\Signature\Util\Directory\DirectoryUtils.cs" />
     <Compile Include="Products\Signature\Util\Directory\FilesDirectoryUtils.cs" />
     <Compile Include="Products\Signature\Util\Directory\IDirectoryUtils.cs" />
-    <Compile Include="Products\Signature\Util\Directory\OutputDirectoryUtils.cs" />
+    <Compile Include="Products\Signature\Util\Directory\TempDirectoryUtils.cs" />
     <Compile Include="Signature.aspx.cs">
       <DependentUpon>Signature.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
