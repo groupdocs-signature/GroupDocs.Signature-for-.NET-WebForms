@@ -32,18 +32,16 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class SignatureApiController : ApiController
     {
-        private static Common.Config.GlobalConfiguration GlobalConfiguration;
-        private List<string> SupportedImageFormats = new List<string>() { ".bmp", ".jpeg", ".jpg", ".tiff", ".tif", ".png" };
+        private static Common.Config.GlobalConfiguration GlobalConfiguration = new Common.Config.GlobalConfiguration();
+        private List<string> SupportedImageFormats = new List<string>{ ".bmp", ".jpeg", ".jpg", ".tiff", ".tif", ".png" };
         private static SignatureHandler SignatureHandler;
-        private DirectoryUtils DirectoryUtils;
+        private readonly DirectoryUtils DirectoryUtils;
 
         /// <summary>
         /// Constructor
         /// </summary>
         public SignatureApiController()
-        {
-            // get global configurations 
-            GlobalConfiguration = new Common.Config.GlobalConfiguration();
+        {            
             // initiate DirectoryUtils
             DirectoryUtils = new DirectoryUtils(GlobalConfiguration.Signature);
             // create signature application configuration
@@ -55,7 +53,10 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Controllers
             // initialize instance for the Image mode
             SignatureHandler = new SignatureHandler(config);
             License license = new License();
-            license.SetLicense(GlobalConfiguration.Application.LicensePath);
+            if (File.Exists(GlobalConfiguration.Application.LicensePath))
+            {
+                license.SetLicense(GlobalConfiguration.Application.LicensePath);
+            }
         }
 
 
