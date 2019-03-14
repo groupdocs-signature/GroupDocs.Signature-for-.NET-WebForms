@@ -50,14 +50,32 @@ https://www.youtube.com/watch?v=pA98PkdXcN8
 
 
 ## How to run
-1. Download/Clone GroupDocs.Signature for .NET Web Forms Example.
-2. Extract/Copy GroupDocs.Signature for .NET Web Forms Example to working directory.
-3. Navigate to GroupDocs.Signature for .NET Web Forms Example root directory.
-4. Open solution in the Visual Studio.
-5. Update common parameters in `web.config` and example related properties in the 'configuration.yml' to meet your requirements.
-5. Run the application.
-6. Go to `http://localhost:{PORT}/signature/`.
-PORT - port number specified in `Web.Config` (by default http://localhost:8080/signature/).
+
+You can run this sample by one of following methods
+
+#### Build from source
+
+Download [source code](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET-WebForms/archive/master.zip) from github or clone this repository.
+
+```bash
+git clone https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET-WebForms
+```
+
+Open solution in the VisualStudio.
+Update common parameters in `web.config` and example related properties in the `configuration.yml` to meet your requirements.
+
+Open http://localhost:8080/signature in your favorite browser
+
+#### Docker image
+Use [docker](https://www.docker.com/) image.
+
+```bash
+mkdir DocumentSamples
+mkdir Licenses
+docker run -p 8080:8080 --env application.hostAddress=localhost -v `pwd`/DocumentSamples:/home/groupdocs/app/DocumentSamples -v `pwd`/Licenses:/home/groupdocs/app/Licenses groupdocs/signature
+## Open http://localhost:8080/signature in your favorite browser.
+```
+
 
 ## Resources
 - **Website:** [www.groupdocs.com](http://www.groupdocs.com)
