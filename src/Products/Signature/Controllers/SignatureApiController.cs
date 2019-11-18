@@ -3,6 +3,7 @@ using GroupDocs.Signature.Domain;
 using GroupDocs.Signature.Handler;
 using GroupDocs.Signature.Options;
 using GroupDocs.Signature.WebForms.Products.Common.Entity.Web;
+using GroupDocs.Signature.WebForms.Products.Signature.Config;
 using GroupDocs.Signature.WebForms.Products.Signature.Entity.Directory;
 using GroupDocs.Signature.WebForms.Products.Signature.Entity.Web;
 using GroupDocs.Signature.WebForms.Products.Signature.Entity.Xml;
@@ -62,6 +63,16 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Controllers
             }
         }
 
+        /// <summary>
+        /// Load Signature configuration
+        /// </summary>
+        /// <returns>Signature configuration</returns>
+        [HttpGet]
+        [Route("loadConfig")]
+        public SignatureConfiguration LoadConfig()
+        {
+            return GlobalConfiguration.Signature;
+        }
 
         /// <summary>
         /// Get all files and directories from storage
