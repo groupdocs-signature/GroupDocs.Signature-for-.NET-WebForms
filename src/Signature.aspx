@@ -11,16 +11,16 @@
 </head>
 <body>
     <client-root></client-root>
-    <script src="resources/viewer/runtime-es2015.js" type="module"></script>
-    <script src="resources/viewer/runtime-es5.js" nomodule></script>
-    <script src="resources/viewer/polyfills-es2015.js" type="module"></script>
-    <script src="resources/viewer/polyfills-es5.js" nomodule></script>
-    <script src="resources/viewer/styles-es2015.js" type="module"></script>
-    <script src="resources/viewer/styles-es5.js" nomodule></script>
-    <script src="resources/viewer/vendor-es2015.js" type="module"></script>
-    <script src="resources/viewer/vendor-es5.js" nomodule></script>
-    <script src="resources/viewer/main-es2015.js" type="module"></script>
-    <script src="resources/viewer/main-es5.js" nomodule></script>
+    <script src="resources/signature/runtime-es2015.js" type="module"></script>
+    <script src="resources/signature/runtime-es5.js" nomodule></script>
+    <script src="resources/signature/polyfills-es2015.js" type="module"></script>
+    <script src="resources/signature/polyfills-es5.js" nomodule></script>
+    <script src="resources/signature/styles-es2015.js" type="module"></script>
+    <script src="resources/signature/styles-es5.js" nomodule></script>
+    <script src="resources/signature/vendor-es2015.js" type="module"></script>
+    <script src="resources/signature/vendor-es5.js" nomodule></script>
+    <script src="resources/signature/main-es2015.js" type="module"></script>
+    <script src="resources/signature/main-es5.js" nomodule></script>
 </body>
 </html>
 
