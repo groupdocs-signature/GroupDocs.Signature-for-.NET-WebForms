@@ -1,5 +1,6 @@
 ﻿using GroupDocs.Signature.WebForms.Products.Common.Entity.Web;
 using GroupDocs.Signature.WebForms.Products.Signature.Entity.Xml;
+using System.Collections.Generic;
 
 namespace GroupDocs.Signature.WebForms.Products.Signature.Entity.Web
 {
@@ -9,7 +10,7 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Entity.Web
     public class SignaturePostedDataEntity : PostedDataEntity
     {
         public string signatureType { get; set; }
-        public SignatureDataEntity[] signaturesData { get; set; }
+        public List<SignatureDataEntity> signaturesData { get; set; }
         public string image { get; set; }
         public StampXmlEntity[] stampData { get; set; }
         public XmlEntity properties { get; set; }
