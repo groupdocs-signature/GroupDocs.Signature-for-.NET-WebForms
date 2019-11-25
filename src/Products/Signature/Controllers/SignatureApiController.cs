@@ -3,6 +3,7 @@ using GroupDocs.Signature.Domain;
 using GroupDocs.Signature.Handler;
 using GroupDocs.Signature.Options;
 using GroupDocs.Signature.WebForms.Products.Common.Entity.Web;
+using GroupDocs.Signature.WebForms.Products.Signature.Config;
 using GroupDocs.Signature.WebForms.Products.Signature.Entity.Directory;
 using GroupDocs.Signature.WebForms.Products.Signature.Entity.Web;
 using GroupDocs.Signature.WebForms.Products.Signature.Entity.Xml;
@@ -62,6 +63,16 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Controllers
             }
         }
 
+        /// <summary>
+        /// Load Signature configuration
+        /// </summary>
+        /// <returns>Signature configuration</returns>
+        [HttpGet]
+        [Route("loadConfig")]
+        public SignatureConfiguration LoadConfig()
+        {
+            return GlobalConfiguration.Signature;
+        }
 
         /// <summary>
         /// Get all files and directories from storage
@@ -147,7 +158,7 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Controllers
             catch (System.Exception ex)
             {
                 // set exception message
-                return Request.CreateResponse(HttpStatusCode.OK, new Common.Resources.Resources().GenerateException(ex));
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new Common.Resources.Resources().GenerateException(ex));
             }
         }
 
@@ -202,6 +213,11 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Controllers
             }
             catch (System.Exception ex)
             {
+                // TODO: this should be changed on special catch for PasswordProtectedException when it will be added in the library
+                if (ex.Message == "Invalid password")
+                {
+                    return Request.CreateResponse(HttpStatusCode.Forbidden, new Common.Resources.Resources().GenerateException(ex, password));
+                }
                 // set exception message
                 return Request.CreateResponse(HttpStatusCode.OK, new Common.Resources.Resources().GenerateException(ex, password));
             }
@@ -239,7 +255,7 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Controllers
             catch (System.Exception ex)
             {
                 // set exception message
-                return Request.CreateResponse(HttpStatusCode.OK, new Common.Resources.Resources().GenerateException(ex, password));
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new Common.Resources.Resources().GenerateException(ex, password));
             }
         }
 
@@ -276,7 +292,7 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Controllers
         [Route("downloadSigned")]
         public HttpResponseMessage DownloadSigned(SignaturePostedDataEntity signDocumentRequest)
         {
-            SignatureDataEntity[] signaturesData = signDocumentRequest.signaturesData;
+            List<SignatureDataEntity> signaturesData = signDocumentRequest.signaturesData;
             if (signaturesData == null || signaturesData.Count() == 0)
             {
                 // set exception message
@@ -300,7 +316,7 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Controllers
             catch (System.Exception ex)
             {
                 // set exception message
-                return Request.CreateResponse(HttpStatusCode.OK, new Common.Resources.Resources().GenerateException(ex));
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new Common.Resources.Resources().GenerateException(ex));
             }
         }
 
@@ -312,7 +328,7 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Controllers
                 // get/set parameters
                 string documentGuid = postedData.guid;
                 password = postedData.password;
-                SignatureDataEntity[] signaturesData = postedData.signaturesData;
+                List<SignatureDataEntity> signaturesData = postedData.signaturesData;
                 SignatureOptionsCollection signsCollection = new SignatureOptionsCollection();
                 // check if document type is image                
                 if (SupportedImageFormats.Contains(Path.GetExtension(documentGuid)))
@@ -320,7 +336,7 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Controllers
                     postedData.documentType = "image";
                 }
                 // set signature password if required
-                for (int i = 0; i < signaturesData.Length; i++)
+                for (int i = 0; i < signaturesData.Count; i++)
                 {
                     switch (signaturesData[i].SignatureType)
                     {
@@ -450,7 +466,7 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Controllers
             catch (System.Exception ex)
             {
                 // set exception message
-                return Request.CreateResponse(HttpStatusCode.OK, new Common.Resources.Resources().GenerateException(ex));
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new Common.Resources.Resources().GenerateException(ex));
             }
         }
 
@@ -493,7 +509,7 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Controllers
             catch (System.Exception ex)
             {
                 // set exception message
-                return Request.CreateResponse(HttpStatusCode.OK, new Common.Resources.Resources().GenerateException(ex));
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new Common.Resources.Resources().GenerateException(ex));
             }
         }
 
@@ -546,7 +562,7 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Controllers
             catch (System.Exception ex)
             {
                 // set exception message
-                return Request.CreateResponse(HttpStatusCode.OK, new Common.Resources.Resources().GenerateException(ex));
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new Common.Resources.Resources().GenerateException(ex));
             }
         }
 
@@ -595,7 +611,7 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Controllers
             catch (System.Exception ex)
             {
                 // set exception message
-                return Request.CreateResponse(HttpStatusCode.OK, new Common.Resources.Resources().GenerateException(ex));
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new Common.Resources.Resources().GenerateException(ex));
             }
         }
 
@@ -722,7 +738,7 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Controllers
             catch (System.Exception ex)
             {
                 // set exception message
-                return Request.CreateResponse(HttpStatusCode.OK, new Common.Resources.Resources().GenerateException(ex));
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new Common.Resources.Resources().GenerateException(ex));
             }
         }
 
@@ -776,7 +792,7 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Controllers
             catch (System.Exception ex)
             {
                 // set exception message
-                return Request.CreateResponse(HttpStatusCode.OK, new Common.Resources.Resources().GenerateException(ex));
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new Common.Resources.Resources().GenerateException(ex));
             }
         }
 
@@ -802,7 +818,7 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Controllers
             catch (System.Exception ex)
             {
                 // set exception message
-                return Request.CreateResponse(HttpStatusCode.OK, new Common.Resources.Resources().GenerateException(ex));
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new Common.Resources.Resources().GenerateException(ex));
             }
         }
 
@@ -845,7 +861,7 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Controllers
             catch (System.Exception ex)
             {
                 // set exception message
-                return Request.CreateResponse(HttpStatusCode.OK, new Common.Resources.Resources().GenerateException(ex));
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new Common.Resources.Resources().GenerateException(ex));
             }
         }
 
@@ -864,7 +880,7 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Controllers
                 // get/set parameters
                 string documentGuid = postedData.guid;
                 password = postedData.password;
-                SignatureDataEntity[] signaturesData = postedData.signaturesData;
+                List<SignatureDataEntity> signaturesData = postedData.signaturesData;
                 SignatureOptionsCollection signsCollection = new SignatureOptionsCollection();
                 // check if document type is image                
                 if (SupportedImageFormats.Contains(Path.GetExtension(documentGuid)))
@@ -872,7 +888,7 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Controllers
                     postedData.documentType = "image";
                 }
                 // set signature password if required
-                for (int i = 0; i < signaturesData.Length; i++)
+                for (int i = 0; i < signaturesData.Count; i++)
                 {
                     switch (signaturesData[i].SignatureType)
                     {
@@ -906,7 +922,7 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Controllers
             catch (System.Exception ex)
             {
                 // set exception message
-                return Request.CreateResponse(HttpStatusCode.OK, new Common.Resources.Resources().GenerateException(ex));
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new Common.Resources.Resources().GenerateException(ex));
             }
         }
 
