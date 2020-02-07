@@ -455,7 +455,7 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Controllers
                 SignatureFileDescriptionEntity uploadedDocument = new SignatureFileDescriptionEntity();
                 uploadedDocument.guid = fileSavePath;
                 MemoryStream ms = new MemoryStream();
-                using (FileStream file = new FileStream(fileSavePath, FileMode.Open, FileAccess.Read))
+                using (FileStream file = new FileStream(fileSavePath, FileMode.Open, FileAccess.ReadWrite))
                 {
                     file.CopyTo(ms);
                     byte[] imageBytes = ms.ToArray();
@@ -488,7 +488,7 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Controllers
                 string documentGuid = postedData.guid;
                 SignatureLoadedPageEntity loadedPage = new SignatureLoadedPageEntity();
                 MemoryStream ms = new MemoryStream();
-                using (FileStream file = new FileStream(documentGuid, FileMode.Open, FileAccess.Read))
+                using (FileStream file = new FileStream(documentGuid, FileMode.Open, FileAccess.ReadWrite))
                 {
                     file.CopyTo(ms);
                     byte[] imageBytes = ms.ToArray();
@@ -723,8 +723,8 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Controllers
                 SignatureHandler.SignatureConfig.OutputPath = DirectoryUtils.FilesDirectory.GetPath();
                 // set data for response
                 opticalCodeData.imageGuid = filePath;
-                opticalCodeData.height = signaturesData.ImageHeight;
-                opticalCodeData.width = signaturesData.ImageWidth;
+                opticalCodeData.height = Convert.ToInt32(signaturesData.ImageHeight);
+                opticalCodeData.width = Convert.ToInt32(signaturesData.ImageWidth);
                 // get signature preview as Base64 string
                 byte[] imageArray = System.IO.File.ReadAllBytes(filePath);
                 string base64ImageRepresentation = Convert.ToBase64String(imageArray);
