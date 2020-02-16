@@ -134,50 +134,6 @@
   <ItemGroup>
     <Content Include="Signature.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="Resources\common\fonts\fontawesome-webfont.eot" />
-    <Content Include="Resources\common\fonts\fontawesome-webfont.ttf" />
-    <Content Include="Resources\common\fonts\fontawesome-webfont.woff" />
-    <Content Include="Resources\common\fonts\fontawesome-webfont.woff2" />
-    <Content Include="Resources\common\fonts\FontAwesome.otf" />
-    <Content Include="Resources\common\css\circle-progress.css" />
-    <Content Include="Resources\common\css\font-awesome.min.css" />
-    <Content Include="Resources\common\css\images\ui-icons_444444_256x240.png" />
-    <Content Include="Resources\common\css\images\ui-icons_555555_256x240.png" />
-    <Content Include="Resources\common\css\images\ui-icons_777620_256x240.png" />
-    <Content Include="Resources\common\css\images\ui-icons_777777_256x240.png" />
-    <Content Include="Resources\common\css\images\ui-icons_cc0000_256x240.png" />
-    <Content Include="Resources\common\css\images\ui-icons_ffffff_256x240.png" />
-    <Content Include="Resources\common\css\jquery-ui.min.css" />
-    <Content Include="Resources\common\css\swiper.min.css" />
-    <Content Include="Resources\common\fonts\fontawesome-webfont.svg" />
-    <Content Include="Resources\common\images\banner.png" />
-    <Content Include="Resources\common\js\jquery-ui.min.js" />
-    <Content Include="Resources\common\js\jquery.min.js" />
-    <Content Include="Resources\common\js\jquery.ui.touch-punch.min.js" />
-    <Content Include="Resources\common\js\swiper.min.js" />
-    <Content Include="Resources\signature\css\bcPaint.css" />
-    <Content Include="Resources\signature\css\bcPaint.mobile.css" />
-    <Content Include="Resources\signature\css\bcPicker.css" />
-    <Content Include="Resources\signature\css\opticalCodeGenerator.css" />
-    <Content Include="Resources\signature\css\signature.css" />
-    <Content Include="Resources\signature\css\signature.mobile.css" />
-    <Content Include="Resources\signature\css\stampGenerator.css" />
-    <Content Include="Resources\signature\css\textGenerator.css" />
-    <Content Include="Resources\signature\images\banner.png" />
-    <Content Include="Resources\signature\images\logo.png" />
-    <Content Include="Resources\signature\js\bcPaint.js" />
-    <Content Include="Resources\signature\js\bcPicker.js" />
-    <Content Include="Resources\signature\js\opticalCodeGenerator.js" />
-    <Content Include="Resources\signature\js\rotatable.js" />
-    <Content Include="Resources\signature\js\signature.js" />
-    <Content Include="Resources\signature\js\stampGenerator.js" />
-    <Content Include="Resources\signature\js\textGenerator.js" />
-    <Content Include="Resources\viewer\css\viewer-dark.css" />
-    <Content Include="Resources\viewer\css\viewer-light.css" />
-    <Content Include="Resources\viewer\css\viewer.css" />
-    <Content Include="Resources\viewer\css\viewer.mobile.css" />
-    <Content Include="Resources\viewer\images\logo.png" />
-    <Content Include="Resources\viewer\js\viewer.js" />
     <Content Include="Web.config" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
@@ -255,7 +211,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
