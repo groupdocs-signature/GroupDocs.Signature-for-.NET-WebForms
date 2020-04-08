@@ -11,7 +11,7 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Signer
     /// </summary>
     public abstract class BaseSigner
     {
-        protected SignatureDataEntity signatureData;
+        protected static SignatureDataEntity SignatureData { get; set; }
 
         /// <summary>
         /// Constructor
@@ -19,15 +19,15 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Signer
         /// <param name="signatureData">SignatureDataEntity</param>
         public BaseSigner(SignatureDataEntity signatureData)
         {
-            this.signatureData = signatureData;
+            SignatureData = signatureData;
         }
 
-       /// <summary>
-       /// Convert rgb string to Color
-       /// </summary>
-       /// <param name="rgbColor">string</param>
-       /// <returns></returns>
-        protected Color getColor(string rgbColor)
+        /// <summary>
+        /// Convert rgb string to Color
+        /// </summary>
+        /// <param name="rgbColor">string</param>
+        /// <returns></returns>
+        protected static Color getColor(string rgbColor)
         {
             // get colors info from string
             string[] colors = rgbColor.Split(',');
@@ -68,7 +68,5 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Signer
         /// <returns>SignOptions</returns>
         /// <throws>Not supported exception</throws>
         public abstract SignOptions SignSlides();
-
-
     }
 }
