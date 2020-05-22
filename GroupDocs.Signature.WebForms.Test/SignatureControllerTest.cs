@@ -3,7 +3,6 @@ using Huygens;
 using System;
 using GroupDocs.Signature.WebForms.Products.Signature.Entity.Web;
 using System.Text;
-using Newtonsoft.Json;
 using System.Collections.Generic;
 
 namespace GroupDocs.Signature.WebForms.Test
@@ -14,7 +13,7 @@ namespace GroupDocs.Signature.WebForms.Test
         [Test]
         public void ViewStatusTest()
         {
-            string path = AppDomain.CurrentDomain.BaseDirectory + "/../../../src";            
+            string path = AppDomain.CurrentDomain.BaseDirectory + "/../../../src";
             using (var server = new DirectServer(path))
             {
                 var request = new SerialisableRequest
