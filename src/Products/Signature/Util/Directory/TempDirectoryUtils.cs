@@ -8,7 +8,7 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Util.Directory
     /// </summary>
     public class TempDirectoryUtils : IDirectoryUtils
     {
-        private readonly String OUTPUT_FOLDER = "/SignedTemp";
+        internal readonly string OUTPUT_FOLDER = "/SignedTemp";
         private SignatureConfiguration signatureConfiguration;
 
         /// <summary>
@@ -20,9 +20,9 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Util.Directory
             this.signatureConfiguration = signatureConfiguration;
 
             // create output directories
-            if (String.IsNullOrEmpty(signatureConfiguration.GetTempFilesDirectory()))
+            if (string.IsNullOrEmpty(signatureConfiguration.GetTempFilesDirectory()))
             {
-                signatureConfiguration.SetTempFilesDirectory(signatureConfiguration.FilesDirectory + OUTPUT_FOLDER);
+                signatureConfiguration.SetTempFilesDirectory(signatureConfiguration.filesDirectory + OUTPUT_FOLDER);
             }
         }
 
