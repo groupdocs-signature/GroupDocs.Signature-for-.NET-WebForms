@@ -20,7 +20,7 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Entity.Directory
         /// </summary>
         /// <param name="signatureConfiguration">SignatureConfiguration</param>
         /// <param name="currentDirectoryPath">string</param>
-        public DataDirectoryEntity(SignatureConfiguration signatureConfiguration, string currentDirectoryPath)
+        protected DataDirectoryEntity(SignatureConfiguration signatureConfiguration, string currentDirectoryPath)
         {
             this.signatureConfiguration = signatureConfiguration;
             this.currentDirectoryPath = currentDirectoryPath;

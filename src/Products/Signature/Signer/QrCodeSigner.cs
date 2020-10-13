@@ -11,7 +11,7 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Signer
     /// </summary>
     public class QrCodeSigner : BaseSigner
     {
-        private OpticalXmlEntity qrCodeData;
+        private readonly OpticalXmlEntity qrCodeData;
 
         /// <summary>
         /// Constructor

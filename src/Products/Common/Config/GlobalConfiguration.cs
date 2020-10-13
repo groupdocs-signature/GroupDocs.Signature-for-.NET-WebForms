@@ -7,10 +7,10 @@ namespace GroupDocs.Signature.WebForms.Products.Common.Config
     /// </summary>
     public class GlobalConfiguration
     {
-        public ServerConfiguration Server;
-        public ApplicationConfiguration Application;
-        public CommonConfiguration Common;
-        public SignatureConfiguration Signature;
+        public ServerConfiguration Server { get; set; }
+        public ApplicationConfiguration Application { get; set; }
+        public CommonConfiguration Common { get; set; }
+        public SignatureConfiguration Signature { get; set; }
 
         /// <summary>
         /// Get all configurations

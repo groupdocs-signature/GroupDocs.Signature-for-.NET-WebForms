@@ -11,8 +11,8 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Util.Directory
     /// </summary>
     public class DataDirectoryUtils : IDirectoryUtils
     {
-        private string DATA_FOLDER = "/SignatureData";
-        private SignatureConfiguration signatureConfiguration;
+        private readonly string DATA_FOLDER = "/SignatureData";
+        private readonly SignatureConfiguration signatureConfiguration;
 
         public CertificateDataDirectoryEntity CertificateDirectory { get; set; }
         public ImageDataDirectoryEntity ImageDirectory { get; set; }

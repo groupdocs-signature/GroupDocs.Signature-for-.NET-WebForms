@@ -7,8 +7,8 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Util.Directory
     /// </summary>
     public class DirectoryUtils
     {
-        public FilesDirectoryUtils FilesDirectory;        
-        public DataDirectoryUtils DataDirectory;
+        public FilesDirectoryUtils FilesDirectory { get; set; }
+        public DataDirectoryUtils DataDirectory { get; set; }
         private TempDirectoryUtils TempFolder;
 
         /// <summary>

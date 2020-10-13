@@ -51,12 +51,7 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Loader
                     FileInfo fileInfo = new FileInfo(file);
 
                     // check if current file/folder is hidden
-                    if (fileInfo.Attributes.HasFlag(FileAttributes.Hidden) || file.Equals(this.globalConfiguration.Signature.dataDirectory))
-                    {
-                        // ignore current file and skip to next one
-                        continue;
-                    }
-                    else
+                    if (!(fileInfo.Attributes.HasFlag(FileAttributes.Hidden) || file.Equals(this.globalConfiguration.Signature.dataDirectory)))
                     {
                         SignatureFileDescriptionEntity fileDescription = new SignatureFileDescriptionEntity();
                         fileDescription.guid = Path.GetFullPath(file);
@@ -264,9 +259,9 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Loader
 
                 return fileList;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
         }
     }

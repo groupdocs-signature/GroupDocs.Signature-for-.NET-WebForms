@@ -1,14 +1,12 @@
 ﻿using GroupDocs.Signature.WebForms.Products.Common.Entity.Web;
-using System;
 using System.IO;
-using System.Web;
 
 namespace GroupDocs.Signature.WebForms.Products.Common.Resources
 {
     /// <summary>
     /// Resources
     /// </summary>
-    public class Resources
+    public static class Resources
     {
         /// <summary>
         /// Get free file name for uploaded file if such file already exists
@@ -51,7 +49,7 @@ namespace GroupDocs.Signature.WebForms.Products.Common.Resources
         /// </summary>
         /// <param name="ex">Exception</param>
         /// <returns>ExceptionEntity</returns>
-        public ExceptionEntity GenerateException(System.Exception ex)
+        public static ExceptionEntity GenerateException(System.Exception ex)
         {
             // Initiate Exception entity
             ExceptionEntity exceptionEntity = new ExceptionEntity();
@@ -67,17 +65,17 @@ namespace GroupDocs.Signature.WebForms.Products.Common.Resources
         /// <param name="ex">Exception</param>
         /// <param name="password">string</param>
         /// <returns>ExceptionEntity</returns>
-        public ExceptionEntity GenerateException(System.Exception ex, String password)
+        public static ExceptionEntity GenerateException(System.Exception ex, string password)
         {
             // Initiate exception
             ExceptionEntity exceptionEntity = new ExceptionEntity();
             // Check if exception message contains password and password is empty
-            if (ex.Message.Contains("password") && String.IsNullOrEmpty(password))
+            if (ex.Message.Contains("password") && string.IsNullOrEmpty(password))
             {
                 exceptionEntity.message = "Password Required";
             }
             // Check if exception contains password and password is set
-            else if (ex.Message.Contains("password") && !String.IsNullOrEmpty(password))
+            else if (ex.Message.Contains("password") && !string.IsNullOrEmpty(password))
             {
                 exceptionEntity.message = "Incorrect password";
             }
