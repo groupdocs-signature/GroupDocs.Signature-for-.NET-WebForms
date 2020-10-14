@@ -259,9 +259,9 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Loader
 
                 return fileList;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
     }
