@@ -17,7 +17,7 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Signer
         /// Constructor
         /// </summary>
         /// <param name="signatureData">SignatureDataEntity</param>
-        public BaseSigner(SignatureDataEntity signatureData)
+        protected BaseSigner(SignatureDataEntity signatureData)
         {
             SignatureData = signatureData;
         }

@@ -1,5 +1,4 @@
-﻿using GroupDocs.Signature.WebForms.Products.Common.Util.Directory;
-using GroupDocs.Signature.WebForms.Products.Signature.Config;
+﻿using GroupDocs.Signature.WebForms.Products.Signature.Config;
 
 namespace GroupDocs.Signature.WebForms.Products.Signature.Util.Directory
 {
@@ -8,7 +7,7 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Util.Directory
     /// </summary>
     public class FilesDirectoryUtils : IDirectoryUtils
     {
-        private SignatureConfiguration signatureConfiguration;
+        private readonly SignatureConfiguration signatureConfiguration;
 
         /// <summary>
         /// Constructor

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using GroupDocs.Signature.Domain;
 using GroupDocs.Signature.Options;
 using GroupDocs.Signature.WebForms.Products.Signature.Entity.Web;
@@ -11,7 +12,7 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Signer
     /// </summary>
     public class StampSigner : BaseSigner
     {
-        private StampXmlEntity[] stampData;
+        private readonly StampXmlEntity[] stampData;
 
         /// <summary>
         /// Constructor
@@ -95,18 +96,18 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Signer
             // draw stamp lines
             for (int n = 0; n < stampData.Length; n++)
             {
-                string text = "";
+                StringBuilder text = new StringBuilder();
                 // prepare line text
                 for (int m = 0; m < stampData[n].textRepeat; m++)
                 {
-                    text = text + stampData[n].text;
+                    text.Append(text + stampData[n].text);
                 }
                 // set reduction size - required to recalculate each stamp line height and font size after stamp resizing in the UI
                 int reductionSize = CalculateRedactionSize(stampData[n]);
                 // draw most inner line - horizontal text
                 if ((n + 1) == stampData.Length)
                 {
-                    StampLine squareLine = PrepareHarisontalLine(stampData[n], text, reductionSize);
+                    StampLine squareLine = PrepareHarisontalLine(stampData[n], text.ToString(), reductionSize);
                     imageSignOptions.InnerLines.Add(squareLine);
                     // check if stamp contains from only one line
                     if (stampData.Length == 1)
@@ -120,10 +121,11 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Signer
                 {
                     // draw outer stamp lines - rounded
                     double height = (stampData[n].radius - stampData[n + 1].radius) / reductionSize;
-                    StampLine line = DrawOuterCircle(stampData[n], stampData[n + 1].strokeColor, text, Convert.ToInt32(height), reductionSize);
+                    StampLine line = DrawOuterCircle(stampData[n], stampData[n + 1].strokeColor, text.ToString(), Convert.ToInt32(height), reductionSize);
                     imageSignOptions.OuterLines.Add(line);
                 }
             }
+
             return imageSignOptions;
         }
 

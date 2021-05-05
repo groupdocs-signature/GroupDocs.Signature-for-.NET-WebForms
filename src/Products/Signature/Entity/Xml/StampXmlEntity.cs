@@ -15,13 +15,13 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Entity.Xml
         public string font { get; set; }
 
         [XmlElement("textColor")]
-        public string textColor = "rgb(0,0,0)";
+        public string textColor { get; set; } = "rgb(0,0,0)";
 
         [XmlElement("strokeColor")]
-        public string strokeColor = "rgb(0,0,0)";
+        public string strokeColor { get; set; } = "rgb(0,0,0)";
 
         [XmlElement("backgroundColor")]
-        public string backgroundColor = "rgb(0,0,0)";
+        public string backgroundColor { get; set; } = "rgb(0,0,0)";
 
         [XmlElement("radius")]
         public double radius { get; set; }

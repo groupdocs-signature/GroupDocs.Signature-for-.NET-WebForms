@@ -9,7 +9,7 @@ namespace GroupDocs.Signature.WebForms.Products.Signature.Util.Directory
     public class TempDirectoryUtils : IDirectoryUtils
     {
         internal readonly string OUTPUT_FOLDER = "/SignedTemp";
-        private SignatureConfiguration signatureConfiguration;
+        private readonly SignatureConfiguration signatureConfiguration;
 
         /// <summary>
         /// Constructor
