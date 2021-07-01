@@ -6,6 +6,8 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/bae368faab7a4857bf5f239b30c63f3d)](https://www.codacy.com/app/GroupDocs/GroupDocs.Signature-for-.NET-WebForms?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=groupdocs-signature/GroupDocs.Signature-for-.NET-WebForms&amp;utm_campaign=Badge_Grade)
 [![GitHub license](https://img.shields.io/github/license/groupdocs-signature/GroupDocs.Signature-for-.NET-WebForms.svg)](https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET-WebForms/blob/master/LICENSE)
 
+:warning: **This repository has moved to https://github.com/groupdocs-signature/GroupDocs.Signature-for-.NET/tree/master/Demos/WebForms**
+
 ## System Requirements
 - .NET Framework 4.5
 - Visual Studio 2015
